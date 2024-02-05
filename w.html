@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bulb itch</title>
+</head>
+<body>
+
+<img id="Image" onclick="turnOnOff()" src=
+    "Light_off.gif">
+
+	<p>
+		Click on the bulb to turn it ON and OFF
+	</p>
+    <button type="button" id="btn" onclick="btn()">OFF</button>
+	<script>
+		function turnOnOff() {
+			let btn = document.getElementById('Image');
+			if (btn.src.match("ONbulb"))
+				btn.src =
+"Light_off.gif";
+			else
+				btn.src =
+"Light_on.gif";
+            updateButton();
+		}
+            function btn(){
+            var onclick = document.getElementById('btn');
+            if(onclick.innerHTML=="ON"){
+                document.getElementById('btn').innerHTML = 'OFF';
+                turnOnOff();
+            }else{
+                document.getElementById('btn').innerHTML = 'ON';
+                turnOnOff();
+            }
+            }
+            function updateButton(){
+                var btn = document.getElementById('Image');
+                if(btn.src.match("ONbulb")){
+                    document.getElementById('btn').innerHTML = 'ON';
+                }else{
+                    document.getElementById('btn').innerHTML = 'OFF';
+                }
+            }
+	</script>
+
+</body>
+</html>
